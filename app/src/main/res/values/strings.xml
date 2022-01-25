@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">RKHA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">About</string>
+    <string name="login">Login</string>
+    <string name="home">Home</string>
+    <string name="RockyKnob">Rocky Knob Homeowners Association\n Scaly Mountain, NC</string>
+    <string name="about_us">About Us</string>
+    <string name="about_us_text_1">A private, gated community located just off Hale Ridge Road in Scaly Mountain, NC on the \“Atlanta side\” of Highlands Plateau. Rocky Knob was originally created in the 1940\'s to be a fishing camp and then transformed into a beautiful residential area surrounded on three sides by national forest. The heart of Rocky Knob is the 17 acre Lake Osage, which is currently home to large mouth bass, bluegills, crappie and the occasional yellow perch and rainbow trout. Some sizable bass have been caught in the lake."
+        "Several years ago the development was designated an Audubon Bird Sanctuary. Osprey, wood ducks, blue and green heron, owls, pileated woodpeckers, finch of all types, warblers, grosbeaks are just a few of the bird species found here."</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="directory">Directory</string>
+    <string name="profile">Profile</string>
+    <string name="directory_list">Directory List</string>
+    <string name="help">Help</string>
+    <string name="search">Search</string>
+    <string name="last_name">Last Name</string>
+    <string name="osage_lake">Osage Lake</string>
+</resources>
