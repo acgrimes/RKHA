@@ -1,5 +1,7 @@
 package com.ll.rkha
 
+import android.widget.TextView
+import androidx.databinding.BindingAdapter
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -14,5 +16,6 @@ data class DirectoryItem(
     var directoryItemName: String = "",
 
     @ColumnInfo(name = "task_done")
-    var lotNumber: Long = 10
+    var lotNumber: Long = 10L
+
 )

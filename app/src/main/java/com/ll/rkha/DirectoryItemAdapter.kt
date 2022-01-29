@@ -2,44 +2,38 @@ package com.ll.rkha
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.ll.rkha.databinding.DirectoryItemBinding
 
-class DirectoryItemAdapter : RecyclerView.Adapter<DirectoryItemAdapter.DirectoryItemViewHolder>() {
-    var data = listOf<DirectoryItem>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    override fun getItemCount() = data.size
+class DirectoryItemAdapter( val clickListener: (directoryItemIt: Long) -> Unit)
+        : ListAdapter<DirectoryItem, DirectoryItemAdapter.DirectoryItemViewHolder>(DirectoryDiffItemCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
             : DirectoryItemViewHolder = DirectoryItemViewHolder.inflateFrom(parent)
 
     override fun onBindViewHolder(holder: DirectoryItemViewHolder, position: Int) {
-        val item = data[position]
-        holder.bind(item)
+        val item = getItem(position)
+        holder.bind(item, clickListener)
     }
 
-    class DirectoryItemViewHolder(val rootView: CardView)
-        : RecyclerView.ViewHolder(rootView) {
-        val directoryItemName = rootView.findViewById<TextView>(R.id.last_name)
-        val lotNumber = rootView.findViewById<TextView>(R.id.lot_number)
+    class DirectoryItemViewHolder( val binding : DirectoryItemBinding)
+        : RecyclerView.ViewHolder(binding.root) {
 
         companion object {
             fun inflateFrom(parent: ViewGroup): DirectoryItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val view = layoutInflater
-                    .inflate(R.layout.directory_item, parent, false) as CardView
-                return DirectoryItemViewHolder(view)
+                val binding = DirectoryItemBinding
+                    .inflate(layoutInflater, parent, false)
+                return DirectoryItemViewHolder(binding)
             }
         }
 
-        fun bind(item: DirectoryItem) {
-            directoryItemName.text = item.directoryItemName
-            lotNumber.text = item.lotNumber.toString()
+        fun bind(item: DirectoryItem, clickListener: (directoryItemId: Long) -> Unit) {
+            binding.directoryItem = item
+            binding.root.setOnClickListener {
+                clickListener(item.directoryItemId)
+            }
         }
     }
 }

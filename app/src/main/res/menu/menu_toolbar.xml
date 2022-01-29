@@ -9,6 +9,11 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/loginFragment"
+        android:title="@string/login"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/aboutFragment"
         android:title="@string/about_us"
         app:showAsAction="never" />

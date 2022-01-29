@@ -16,6 +16,11 @@
             app:destination="@id/aboutFragment"/>
     </fragment>
     <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ll.rkha.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
         android:id="@+id/aboutFragment"
         android:name="com.ll.rkha.AboutFragment"
         android:label="About Us"
